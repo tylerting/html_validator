@@ -25,14 +25,14 @@ def validate_html(html):
         if "/" not in a:
             s.append(b)
         else:
-            if len(s) == 0:
+            if not s:
                 balanced = False
             else:
                 top = s.pop()
                 if not top == b[1:]:
                     balanced = False
-        index += 1
-    if balanced and len(s) == 0:
+        index = index + 1
+    if balanced and not s:
         return True
     else:
         return False
